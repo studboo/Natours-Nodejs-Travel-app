@@ -14,7 +14,7 @@ const updateSettings = async (id) => {
 			const passwordConfirm = document.getElementById('password-confirm').value;
 			const res = await axios({
 				method: 'PATCH',
-				url: 'http://127.0.0.1:3000/api/v1/users/updatemypassword',
+				url: '/api/v1/users/updatemypassword',
 				data: {
 					oldPassword: passwordold,
 					password: password,
@@ -42,7 +42,7 @@ const updateSettings = async (id) => {
 			form.append('photo', document.getElementById('photo').files[0]);
 			const res = await axios({
 				method: 'PATCH',
-				url: 'http://127.0.0.1:3000/api/v1/users/updateMe',
+				url: '/api/v1/users/updateMe',
 				data: form,
 			});
 			// console.log(res.status, photo);

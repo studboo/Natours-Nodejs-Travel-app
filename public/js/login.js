@@ -20,7 +20,7 @@ const login = async () => {
 	try {
 		const res = await axios({
 			method: 'POST',
-			url: 'http://127.0.0.1:3000/api/v1/users/login',
+			url: '/api/v1/users/login',
 			data: {
 				email,
 				password,
@@ -34,7 +34,7 @@ const login = async () => {
 			}, 1500);
 		}
 
-		console.log(res);
+		// console.log(res);
 	} catch (err) {
 		showAlert('error', err.response.data.message);
 	}
@@ -44,7 +44,7 @@ const logout = async () => {
 	try {
 		const res = await axios({
 			method: 'GET',
-			url: 'http://127.0.0.1:3000/api/v1/users/logout',
+			url: '/api/v1/users/logout',
 		});
 		location.reload(true);
 	} catch (err) {
@@ -57,9 +57,9 @@ const stripe = Stripe('pk_test_51IOhQWB9Y1v2rL4usTkxjmbD6w4oDwB0B9YkqjDpwRSYj2Y2
 const bookTour = async (tourId) => {
 	try {
 		// 1 get the session from the server
-		const session = await axios(`http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`);
+		const session = await axios(`/api/v1/bookings/checkout-session/${tourId}`);
 
-		console.log(session);
+		// console.log(session);
 
 		// 2 Create checkout form + charge credit card
 		await stripe.redirectToCheckout({
