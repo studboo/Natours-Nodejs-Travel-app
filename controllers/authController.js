@@ -85,7 +85,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 	} else if (req.cookies.jwt) {
 		token = req.cookies.jwt;
 	}
-	console.log(token);
+	// console.log(token);
 	if (!token) {
 		return next(new AppError('You are not logged in!', 401));
 	}
@@ -182,7 +182,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 	// 1 Get user based on TOKEN
 	const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
 
-	console.log(req.params.token);
+	// console.log(req.params.token);
 
 	const user = await User.findOne({ passwordResetToken: hashedToken, passwordResetExpires: { $gt: Date.now() } });
 
