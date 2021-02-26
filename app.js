@@ -78,6 +78,7 @@ app.use((req, res, next) => {
 	next();
 });
 
+// Routes
 app.use('/', viewRouter);
 app.use('/login', viewRouter);
 app.use('/api/v1/tours', tourRouter);
