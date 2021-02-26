@@ -35,7 +35,7 @@ app.use(
 	})
 );
 
-// Limit req from same ip address
+// Limit Req from same ip Address
 const limiter = rateLimit({
 	max: 100,
 	windowMs: 60 * 60 * 1000,
