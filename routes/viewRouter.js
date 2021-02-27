@@ -1,7 +1,7 @@
 const express = require('express');
 
 const authController = require(`./../controllers/authController`);
-const bookingController = require(`./../controllers/bookingController`);
+// const bookingController = require(`./../controllers/bookingController`);
 
 const viewsController = require(`./../controllers/viewsController`);
 const router = express.Router();
@@ -19,7 +19,7 @@ router.post(
 
 router.get(
 	'/',
-	bookingController.createBookingCheckout,
+	// bookingController.createBookingCheckout,
 	authController.isLoggedIn,
 	viewsController.getOverview
 );
