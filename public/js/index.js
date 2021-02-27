@@ -54,3 +54,6 @@ const updateSettings = async (id) => {
 		showAlert('error', 'Something went wrong');
 	}
 };
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alert) showAlert('success', alertMessage);

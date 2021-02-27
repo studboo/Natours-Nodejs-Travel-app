@@ -6,6 +6,9 @@ const authController = require(`./../controllers/authController`);
 const viewsController = require(`./../controllers/viewsController`);
 const router = express.Router();
 
+// Checking for alerts
+router.use(viewsController.alert);
+
 // Protected route checker
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/my-tours', authController.protect, viewsController.getMyTours);
